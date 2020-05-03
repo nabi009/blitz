@@ -124,25 +124,19 @@ export function getDbName(connectionString: string): string {
 }
 
 export default class Db extends Command {
-  static description = `Run database commands
+  static description = `Run database
 
-${chalk.bold('migrate')}   Run any needed migrations via Prisma 2 and generate Prisma Client.
+${chalk_1.default.bold('👉 migrate')}   Run any needed migrations via Prisma 2 and generate Prisma Client.
 
-${chalk.bold(
-  'introspect',
-)}   Will introspect the database defined in db/schema.prisma and automatically generate a complete schema.prisma file for you. Lastly, it\'ll generate Prisma Client.
+${chalk_1.default.bold('👉 introspect')}   Will introspect the database defined in db/schema.prisma and automatically \ngenerate a complete schema.prisma file for you. Lastly, it\'ll generate Prisma Client.
 
-${chalk.bold(
-  'studio',
-)}   Open the Prisma Studio UI at http://localhost:5555 so you can easily see and change data in your database.
-
-${chalk.bold('reset')}   Reset the database and run a fresh migration via Prisma 2.
+${chalk_1.default.bold('👉 studio')}   Open the Prisma Studio UI at http://localhost:5555 so you can easily see and\n change data in your database.
 `
 
   static args = [
     {
-      name: 'command',
-      description: 'Run specific db command',
+      name: 'Commands',
+      description: this.description,
       required: true,
     },
   ]
